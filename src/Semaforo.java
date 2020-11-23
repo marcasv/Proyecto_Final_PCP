@@ -4,6 +4,7 @@
 */
 
 public class Semaforo {
+<<<<<<< HEAD
     
     private int counter;
     
@@ -11,6 +12,12 @@ public class Semaforo {
         this(0);
     }
     
+=======
+     private int counter;
+    public Semaforo() {
+        this(0);
+    }
+>>>>>>> 108a8dc0371765f8d59f6e6ff21e89e1a1e1b6bd
     public Semaforo(int i) {
         if (i < 0) throw new IllegalArgumentException(i + " < 0");
         counter = i;

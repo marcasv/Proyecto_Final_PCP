@@ -3,12 +3,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/D:/Documentos/NetBeansProjects/Proyecto/src/Grupo.java</file>
             <file>file:/D:/Documentos/NetBeansProjects/Proyecto/src/Semaforo.java</file>
             <file>file:/D:/Documentos/NetBeansProjects/Proyecto/src/Heladeria.java</file>
             <file>file:/D:/Documentos/NetBeansProjects/Proyecto/src/Persona.java</file>
             <file>file:/D:/Documentos/NetBeansProjects/Proyecto/src/Caja.java</file>
             <file>file:/D:/Documentos/NetBeansProjects/Proyecto/src/Mostrador.java</file>
+=======
+            <file>file:/C:/Users/marti/Documents/NetBeansProjects/proyecto_sem/src/Caja.java</file>
+            <file>file:/C:/Users/marti/Documents/NetBeansProjects/proyecto_sem/src/Persona.java</file>
+            <file>file:/C:/Users/marti/Documents/NetBeansProjects/proyecto_sem/src/Heladeria.java</file>
+            <file>file:/C:/Users/marti/Documents/NetBeansProjects/proyecto_sem/src/Mostrador.java</file>
+            <file>file:/C:/Users/marti/Documents/NetBeansProjects/proyecto_sem/src/Grupo.java</file>
+>>>>>>> 108a8dc0371765f8d59f6e6ff21e89e1a1e1b6bd
         </group>
     </open-files>
 </project-private>
