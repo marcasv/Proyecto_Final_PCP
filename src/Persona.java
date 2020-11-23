@@ -4,7 +4,6 @@
 */
 import java.util.concurrent.Semaphore;
 import java.util.Random;
-<<<<<<< HEAD
 
 /*La clase Persona modela a los individuos que pertenecen a los grupos, como
 estos también interactúan tanto con el mostrador como con la caja deben tener
@@ -15,19 +14,12 @@ semáforos son para que una persona del grupo pueda utilizar el mostrador o la
 caja a la vez*/
 public class Persona extends Thread {
     
-=======
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-public class Persona extends Thread {
->>>>>>> 108a8dc0371765f8d59f6e6ff21e89e1a1e1b6bd
     private int nombre;
     private String helado;
     private boolean pedido;
     private boolean pagado;
     private Mostrador mostrador;
     private Caja caja;
-<<<<<<< HEAD
     private int nombreGrupo;
     // Definir semaforo de caja y mostrador
     private static Semaphore mostradorPersona;
@@ -36,42 +28,19 @@ public class Persona extends Thread {
     private Grupo grupo;
 
     public Persona(int nombre, Mostrador mostrador, Caja caja, int grupo) {
-=======
-    private boolean grupoListo;
-    private boolean grupoPedido;
-    private int nombreGrupo;
-    // Definir semaforo de caja y mostrador
-    private static Semaphore mostradorPersona = new Semaphore(1);;
-    // Semaforo de caja
-    private static Semaphore cajaPersona = new Semaphore(1);
-    private Grupo grupo;
-    private Semaforo s;
-    private Semaforo s1;
-
-    public Persona(int nombre, Mostrador mostrador, Caja caja, int grupo, Semaforo s, Semaforo s1) {
->>>>>>> 108a8dc0371765f8d59f6e6ff21e89e1a1e1b6bd
         this.caja = caja;
         this.mostrador = mostrador;
         this.nombre = nombre;
         this.pedido = false;
         this.pagado = false;
         this.helado = "";
-<<<<<<< HEAD
         this.nombreGrupo = grupo;
         this.mostradorPersona = new Semaphore(1);
         this.cajaPersona = new Semaphore(1);
-=======
-        nombreGrupo = grupo;
-        grupoListo = false;
-        grupoPedido = false;
-        this.s = s;
-        this.s1 = s1;
->>>>>>> 108a8dc0371765f8d59f6e6ff21e89e1a1e1b6bd
     }
 
     @Override
     public void run() {
-<<<<<<< HEAD
         
         Random r = new Random();
         int num = r.nextInt(3);
@@ -143,59 +112,6 @@ public class Persona extends Thread {
                 
     }
     
-=======
-                Random r = new Random();
-                int num = r.nextInt(3);
-                System.out.println("Persona " + nombre + " del grupo " + nombreGrupo + " eligiendo helado....");
-                try {
-                    Thread.sleep((num) * 1000);
-                    helado = elegirHelado(mostrador.getSabores(), num);
-                    System.out.println("Persona " + nombre + " del grupo " + nombreGrupo + " eligió helado: " + helado);
-                } catch (InterruptedException e1) {
-                    e1.printStackTrace();
-                }
-                //PEDIR HELADO
-                try {
-                    mostradorPersona.acquire();
-                        mostrador.pedirHelado(nombre, helado, nombreGrupo);
-                        pedido = true;
-                    mostradorPersona.release();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }///
-                
-                while(!grupo.isGrupoPedido()){
-                    
-                }
-                //s.release();
-                grupo.desactivarSemaforo();
-                
-                
-                //------------------------------------------------------------
-                
-                
-                try {
-                    grupo.solicitarSemaforoCaja();
-                } catch (InterruptedException ex) {
-                    Logger.getLogger(Persona.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                try {
-                    cajaPersona.acquire();
-                        caja.pagar(nombre, nombreGrupo);
-                        pagado = true;
-                    cajaPersona.release();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                
-                while(!grupo.isGrupoTerminado()){
-                    
-                }
-                grupo.desactivarSemaforoCaja();
-                
-    }
-
->>>>>>> 108a8dc0371765f8d59f6e6ff21e89e1a1e1b6bd
     public String elegirHelado(String [] sabores,int num){
        
         return sabores[num];
@@ -209,17 +125,6 @@ public class Persona extends Thread {
         return pedido;
     }
 
-<<<<<<< HEAD
-=======
-    public void setGrupoListo(boolean grupo){
-        this.grupoListo = grupo;
-    }
-    public void setGrupoPedido(boolean grupo){
-        this.grupoPedido = grupo;
-    }
-
-
->>>>>>> 108a8dc0371765f8d59f6e6ff21e89e1a1e1b6bd
     public void setGrupo(Grupo grupo) {
         this.grupo = grupo;
     }
